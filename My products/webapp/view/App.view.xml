@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core"
+controllerName="ui5.product.list.controller.App"
+displayBlock="true"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+<Shell>
+    <App  class="myProductsList">
+        <Page class="sapUiResponsiveContentPadding" title="{i18n>appTittle}">
+        <VBox>
+        <Input 
+            id="idproductname"
+            class="sapUiTinyMarginEnd" 
+            placeholder="{i18n>Productname}" 
+            width="20rem"
+            maxLength="40"/>
+            <ComboBox id="IdCategory" placeholder="{i18n>category}">
+             <items>
+               <core:Item key="" text=""/>
+               <core:Item key="1" text="Food"/>
+               <core:Item key="2" text="Bevarages" />
+               <core:Item key="3" text="Electronics" />
+             </items>
+            </ComboBox>
+            <Input id="Idprice" placeholder="{i18n>price}" type="Number"></Input>
+            <DatePicker id="IdReleseDate" placeholder="{i18n>ReleaseDate}"></DatePicker>
+            <DatePicker id="IddiscontinuedDate" placeholder="{i18n>discontinuedDate}"></DatePicker>
+        </VBox>
+
+            <Button 
+            text="{i18n>createbutton}" 
+            press="onPressCreateNewProduct" />
+
+            <List 
+            id="idproductlist"
+            class="sapUiSmallMarginTop listWithSmallerTitle" 
+            headerText="{i18n>Products}" 
+            noDataText="{i18n>nodatatext}"
+            mode="Delete"
+            delete="OnpressDelete"/>
+           
+         </Page>
+    </App>
+</Shell>
+
+</mvc:View>
